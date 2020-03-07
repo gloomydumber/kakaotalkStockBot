@@ -36,7 +36,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB) {
     currentTime +
     "\n" +
     weekday[date.getDay()] +
-    "???? (KST)";
+    "요일 (KST)";
 
   if (msg == "오늘") {
     replier.reply("주인님, 현재시간 알려드립니다.\n" + today);
