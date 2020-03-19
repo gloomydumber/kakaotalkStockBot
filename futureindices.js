@@ -1,5 +1,5 @@
 function response(room, msg, sender, isGroupChat, replier, ImageDB) {
-  if (msg == "키플롬") {
+  if (msg == "선물") {
     var pURL = new Array();
     var pname = new Array();
     pURL[0] = "https://kr.investing.com/indices/nq-100-futures";
@@ -8,13 +8,9 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB) {
     pname[1] = "S&P 500"; // snp
     pURL[2] = "https://kr.investing.com/indices/us-30-futures";
     pname[2] = "DOW 30"; // dow
-    pURL[3] = "https://kr.investing.com/indices/volatility-s-p-500";
-    pname[3] = "CBOE VIX"; // vix
-    pURL[4] = "https://kr.investing.com/indices/kospi";
-    pname[4] = "KOSPI"; // kospi
-    pURL[5] = "https://kr.investing.com/indices/kosdaq";
-    pname[5] = "KOSDAQ"; // kosdaq
-    var oneqmsg = "";
+    pURL[3] = "https://kr.investing.com/indices/korea-200-futures";
+    pname[3] = "KOSPI"; // kospi
+    var oneqmsg = "선물\n";
 
     for (var i = 0; i < pURL.length; i++) {
       var odata = org.jsoup.Jsoup.connect(pURL[i])
@@ -27,8 +23,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB) {
       datasupport = datasupport.replace(/<[^>]+>/g, ""); // tag remove
       datasupport = datasupport.replace(/\n/g, " "); // enter remove and make space bar
 
-      var msg = pname[i] + "\n----------\n" + data + "\n" + datasupport + "\n";
-
+      var msg = pname[i] + "\n" + data + "\n" + datasupport + "\n----------\n";
       oneqmsg += msg;
     }
 
