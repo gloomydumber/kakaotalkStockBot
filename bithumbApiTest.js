@@ -1,5 +1,5 @@
 function response(room, msg, sender, isGroupChat, replier, ImageDB) {
-  if (msg == "달러") {
+  if (msg == "빗") {
     var pURL = new Array();
     var pname = new Array();
     pURL[0] =
@@ -15,16 +15,12 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB) {
       var data = odata.select("span.spt_con") + ""; // to change string (+ "")
       data = data.replace(/<[^>]+>/g, "");
       data = data.replace(/\전일대비상승/g, "");
-      data = data.replace(/\전일대비하락/g, "");
-      data = data.replace(/\전일대비보합/g, "");
       data = data.replace(/\지수/g, "");
 
       var datasupport = odata.select("span.price") + ""; // ?????? ????
       datasupport = datasupport.replace(/<[^>]+>/g, ""); // tag remove
       datasupport = datasupport.replace(/\n/g, " "); // enter remove and make space bar
       datasupport = datasupport.replace(/\전일대비상승/g, ""); // str.replace(/\-/g,'');
-      datasupport = datasupport.replace(/\전일대비하락/g, ""); // str.replace(/\-/g,'');
-      datasupport = datasupport.replace(/\전일대비보합/g, ""); // str.replace(/\-/g,'');
 
       var msg = pname[i] + "\n" + data + "\n" + datasupport + "\n----------\n";
       oneqmsg += msg;
