@@ -4,7 +4,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB) {
     var pname = new Array();
     pURL[0] =
       "https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%ED%99%98%EC%9C%A8";
-    pname[0] = " USD/KRW 하나은행\n 매매기준율 환율우대 없음"; // nasdaq
+    pname[0] = " USD/KRW 하나은행\n 매매기준율 환율우대 없음"; // from hanabank
     var oneqmsg = "";
 
     for (var i = 0; i < pURL.length; i++) {
@@ -19,7 +19,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB) {
       data = data.replace(/\전일대비보합/g, "");
       data = data.replace(/\지수/g, "");
 
-      var datasupport = odata.select("span.price") + ""; // ?????? ????
+      var datasupport = odata.select("span.price") + ""; // to make string type
       datasupport = datasupport.replace(/<[^>]+>/g, ""); // tag remove
       datasupport = datasupport.replace(/\n/g, " "); // enter remove and make space bar
       datasupport = datasupport.replace(/\전일대비상승/g, ""); // str.replace(/\-/g,'');
