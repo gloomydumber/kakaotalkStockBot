@@ -2,4 +2,4 @@
 
 Kakaotalk Stock Bot
 
-.md , post about how to load vs code settings
+![katalkchatbot](/img/katalkchatbot.png)
